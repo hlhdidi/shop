@@ -240,5 +240,6 @@
 		<module>shop-mapper</module>
 		<module>shop-service-buyer</module>
 		<module>shop-service-cms</module>
+		<module>shop-service-product</module>
 	</modules>
 </project>
