@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hlhdidi.shop.mapper.sys.SysUserMapper">
+	<resultMap type="com.hlhdidi.shop.pojo.sys.SysUser" id="usermap">
+		<id column="sys_uid" property="sys_uid"/>
+		<result column="sys_username" property="sys_username"/>
+		<result column="sys_password" property="sys_password"/>
+		<collection property="roles" ofType="com.hlhdidi.shop.pojo.sys.SysRole">
+			<id column="sys_rid" property="sys_rid"/>
+			<result column="sys_rname" property="sys_rname"/>
+			<result column="sys_des" property="sys_des"/>
+		</collection>
+	</resultMap>
+	<select id="findByName" parameterType="string" resultMap="usermap">
+		select * from sys_user where sys_username=#{username};
+	</select>
+</mapper>

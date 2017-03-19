@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hlhdidi.shop.mapper.product.BrandMapper">
+	<resultMap type="com.hlhdidi.shop.pojo.product.Brand" id="brandMap">
+		<result column="is_display" property="isDisplay"/>
+		<result column="img_url" property="imgUrl"/>
+	</resultMap>
+	<select id="selectBrandList" parameterType="com.hlhdidi.shop.pojo.product.BrandQuery" resultMap="brandMap">
+		SELECT * FROM bbs_brand 
+		<where>
+			<if test="name !=null">
+				name LIKE "%"#{name}"%"
+			</if>
+			<if test="isDisplay !=null">
+				AND is_display = #{isDisplay}
+			</if>
+		</where>
+				order by id desc
+		<if test="startIndex !=null">
+			LIMIT #{startIndex},#{pageSize};
+		</if>
+	</select>
+	<select id="selectTotalCount" parameterType="com.hlhdidi.shop.pojo.product.BrandQuery" resultType="int">
+		SELECT count(*) FROM bbs_brand 
+		<where>
+			<if test="name !=null">
+				name LIKE "%"#{name}"%"
+			</if>
+			<if test="isDisplay !=null">
+				AND is_display = #{isDisplay};
+			</if>
+		</where>
+	</select>
+	<select id="findById" parameterType="int" resultMap="brandMap">
+		SELECT * from bbs_brand WHERE id=#{id};
+	</select>
+	<update id="update" parameterType="com.hlhdidi.shop.pojo.product.Brand">
+		UPDATE bbs_brand 
+		<set>
+			<if test="name !=null">
+				name=#{name},
+			</if>
+			<if test="description !=null">
+				description=#{description},
+			</if>
+			<if test="imgUrl !=null">
+				img_url=#{imgUrl},
+			</if>
+			<if test="sort !=null">
+				sort=#{sort},
+			</if>
+			<if test="isDisplay !=null">
+				is_display=#{isDisplay}
+			</if>
+		</set> 
+		<where>
+			id=#{id}
+		</where>
+	</update>
+	<delete id="deleteIds" parameterType="long[]">
+		delete from bbs_brand
+		where id in 
+		<foreach collection="array" open="(" close=")" separator="," item="i">
+			#{i}
+		</foreach>
+	</delete>
+	<insert id="save" parameterType="com.hlhdidi.shop.pojo.product.Brand">
+		INSERT INTO bbs_brand
+		(name,description,img_url,sort,is_display)
+		VALUES(#{name},#{description},#{imgUrl},#{sort},#{isDisplay});
+	</insert>
+	<delete id="deleteById" parameterType="int">
+		DELETE FROM bbs_brand 
+		WHERE id=#{value};
+	</delete>
+</mapper>
