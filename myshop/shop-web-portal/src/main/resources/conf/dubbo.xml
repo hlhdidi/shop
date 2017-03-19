@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/task
+   		http://www.springframework.org/schema/task/spring-task.xsd
+		http://code.alibabatech.com/schema/dubbo        
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<!-- 配置应用名 -->
+	<dubbo:application name="shop-console"/>
+	<!-- 配置dubbo服务器的地址 -->
+	<dubbo:registry address="N/A"></dubbo:registry>
+	<!-- 配置需要的接口,timeout设置超时未5min
+		check为检查后即便没连接也不会报错!,url设置该接口去哪里去寻找.
+	-->
+	<dubbo:reference interface="com.hlhdidi.shop.interfaces.product.ProductService" id="productService"
+	timeout="300000"  url="dubbo://127.0.0.1:20880"></dubbo:reference>
+	<dubbo:reference interface="com.hlhdidi.shop.interfaces.product.BrandService" id="brandService"
+	timeout="300000"  url="dubbo://127.0.0.1:20880"></dubbo:reference>
+	<dubbo:reference interface="com.hlhdidi.shop.interfaces.solr.SolrService" id="solrService"
+	timeout="300000"  url="dubbo://127.0.0.1:20881"></dubbo:reference>
+	<dubbo:reference interface="com.hlhdidi.shop.interfaces.product.SkuService" id="skuService"
+	timeout="300000"  url="dubbo://127.0.0.1:20880"></dubbo:reference>
+	<dubbo:reference interface="com.hlhdidi.shop.interfaces.product.PositionService" id="positionService"
+	timeout="300000"  url="dubbo://127.0.0.1:20880"></dubbo:reference>
+	<dubbo:reference interface="com.hlhdidi.shop.interfaces.product.AdService" id="adService"
+	timeout="300000"  url="dubbo://127.0.0.1:20880"></dubbo:reference>
+	<dubbo:reference interface="com.hlhdidi.shop.interfaces.buyer.BuyerService" id="buyerService"
+	timeout="300000"  url="dubbo://127.0.0.1:20883"></dubbo:reference>
+	<dubbo:reference interface="com.hlhdidi.shop.interfaces.buyer.SessionProvider" id="sessionProvider"
+	timeout="300000"  url="dubbo://127.0.0.1:20883"></dubbo:reference>
+	
+	<!-- 设置全局的超时时间 10min -->
+	<dubbo:consumer timeout="600000" check="false"></dubbo:consumer>
+</beans>

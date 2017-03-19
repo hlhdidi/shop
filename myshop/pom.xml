@@ -244,5 +244,6 @@
 		<module>shop-service-solr</module>
 		<module>shop-web-console</module>
 		<module>shop-web-login</module>
+		<module>shop-web-portal</module>
 	</modules>
 </project>
