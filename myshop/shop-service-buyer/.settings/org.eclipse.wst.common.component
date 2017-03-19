@@ -13,6 +13,9 @@
         <dependent-module archiveName="shop-commons-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/shop-commons/shop-commons">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="shop-mapper-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/shop-mapper/shop-mapper">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="shop-service-buyer"/>
         <property name="java-output-path" value="/shop-service-buyer/target/classes"/>
     </wb-module>

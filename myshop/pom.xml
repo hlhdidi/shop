@@ -239,5 +239,6 @@
 		<module>shop-interfaces</module>
 		<module>shop-mapper</module>
 		<module>shop-service-buyer</module>
+		<module>shop-service-cms</module>
 	</modules>
 </project>
