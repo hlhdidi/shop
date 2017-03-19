@@ -236,5 +236,7 @@
 	<modules>
 		<module>shop-commons</module>
 		<module>shop-pojo</module>
+		<module>shop-interfaces</module>
+		<module>shop-mapper</module>
 	</modules>
 </project>
