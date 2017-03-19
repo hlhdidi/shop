@@ -235,5 +235,6 @@
 	</dependencies>
 	<modules>
 		<module>shop-commons</module>
+		<module>shop-pojo</module>
 	</modules>
 </project>
