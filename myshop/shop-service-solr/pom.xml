@@ -5,17 +5,17 @@
     <artifactId>myshop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>shop-service-product</artifactId>
+  <artifactId>shop-service-solr</artifactId>
   <packaging>war</packaging>
   <dependencies>
   	<dependency>
   		<groupId>com.hlhdidi.shop</groupId>
-  		<artifactId>shop-mapper</artifactId>
+  		<artifactId>shop-interfaces</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   	<dependency>
   		<groupId>com.hlhdidi.shop</groupId>
-  		<artifactId>shop-interfaces</artifactId>
+  		<artifactId>shop-mapper</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   </dependencies>

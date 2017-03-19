@@ -241,5 +241,6 @@
 		<module>shop-service-buyer</module>
 		<module>shop-service-cms</module>
 		<module>shop-service-product</module>
+		<module>shop-service-solr</module>
 	</modules>
 </project>
