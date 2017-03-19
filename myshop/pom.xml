@@ -238,5 +238,6 @@
 		<module>shop-pojo</module>
 		<module>shop-interfaces</module>
 		<module>shop-mapper</module>
+		<module>shop-service-buyer</module>
 	</modules>
 </project>
