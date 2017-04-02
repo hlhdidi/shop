@@ -11,6 +11,6 @@ public class Constant {
 	public static final String REDIS_PRODUCTID_KEY="shop_product_id";
 	//购物车的键
 	public static final String REDIS_CART="cart_";
-        //测试Git的pull功能
-        public static final String TEST_GIT="hello,Git";
+        //测试Git的push功能
+        public static final String TEST="hello,Git";
 }
