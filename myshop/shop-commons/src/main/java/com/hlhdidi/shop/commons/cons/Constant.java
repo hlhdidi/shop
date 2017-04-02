@@ -1,5 +1,9 @@
 package com.hlhdidi.shop.commons.cons;
-
+/**
+ * 宇宙无敌海哥哥
+ * @author Administrator
+ *
+ */
 public class Constant {
 	//FASTDFS的服务器的IP地址
 	public static final String FAST_DFS_IP="http://192.168.200.128/";
