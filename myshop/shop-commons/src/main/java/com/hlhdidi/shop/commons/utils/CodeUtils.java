@@ -8,7 +8,7 @@ public class CodeUtils {
 	 * @return
 	 */
 	public static String genCode() {
-		String uuid = UUID.randomUUID().toString();
+		String uuid = UUID.randomUUID().toString();                //ok
 		return uuid.replaceAll("-", "").substring(0, 6);
 	}
 }
