@@ -13,4 +13,5 @@ public class Constant {
 	public static final String REDIS_CART="cart_";
         //测试Git的pull功能
         public static final String TEST_GIT="hello,Git";
+	//yunyun
 }
