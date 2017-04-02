@@ -7,4 +7,12 @@
   </parent>
   <artifactId>shop-web-portal</artifactId>
   <packaging>war</packaging>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>com.hlhdidi.shop</groupId>
+  		<artifactId>shop-interfaces</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
